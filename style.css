@@ -1,0 +1,796 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 1s;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+       
+}
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.container{
+    width: 100vw;
+}
+
+
+/*..........................navbar...........................*/
+
+
+.navbar{
+    width: 100vw;
+    position: sticky;
+    top: 0vw;
+    display: flex;
+    z-index: 5;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6vw 4vw;
+    box-shadow: 1px 1px 10px rgb(199, 195, 195);
+    background-color: #f9f9f9;
+}
+.logo img{
+    width: 5vw;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo p{
+    font-size: 1.5vw;
+    text-indent: 0.5vw;
+    letter-spacing: 0.2vw;
+    font-weight: 600;
+}
+.logo span{
+    color: #ff3300;
+}
+.nav-list a{
+    text-decoration: none;
+}
+.nav-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    list-style: none;
+}
+.list-items{
+    color: black;
+    font-size: 1.2vw;
+    transition: color 0.3s;
+}
+.list-items:hover{
+    color: #ff3300;
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97);;
+}
+
+
+/*..........................Hero...........................*/
+
+
+.hero{
+    width: 100vw;
+    height: 89vh;
+    background-image: url(./Asserts/hero.jpg);
+    background-size: cover;
+    position: relative;
+}
+.overlay{
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.left{
+    width: 50vw;
+    height: 100%;
+    padding: 8vw 8vw;
+}
+.left h1{
+    font-size: 2.5vw;
+    font-weight: 600;
+    line-height: 3vw;
+    color: #fff;
+}
+.left p{
+    font-size: 1.2vw;
+    margin-top: 3vw;
+    line-height: 1.7vw;
+    color: #f9f9f9;
+}
+.left h3{
+    font-size: 1.6vw;
+    margin-top: 3vw;
+    line-height: 2vw;
+    color: #fff;
+}
+.numbers{
+    margin-top: 5vw;
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+    align-items: center;
+}
+.numbers a{
+    text-decoration: none;
+    background-color: #ff3300;
+    padding: 0.8vw 1.5vw;
+    font-size: 1.3vw;
+    color: #f9f9f9;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+}
+@keyframes appear{
+    from{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+.numbers a:hover{
+    background-color: #009900;
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97);
+}
+.right{
+    width: 50vw;
+    height: 100%;
+}
+.right img{
+    width: 100%;
+    height: 100%;
+}
+
+
+/*...............wthatsapp...............*/
+
+.whatsappmbl{
+    display: none;
+}
+
+.whatsapp a{
+    position: fixed;
+    background-image: url(./Asserts/whatsapp.png);
+    background-size: cover;
+    width: 4vw;
+    height: 4vw;
+    bottom: 1vw;
+    z-index: 10;
+    right: 1vw;
+}
+
+/*................services.................*/
+.services-container{
+    padding: 5vw 10vw;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(40%, 2fr));
+    gap: 2vw;
+}
+.services-container .service{
+    display: flex;
+    gap: 2vw;
+    width: 100%;
+    height: 16vw;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 1px 1px 30px rgb(230, 227, 227);
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+.services-heading{
+    padding-top: 5vw;
+    text-align: center;
+}
+.services-heading h1{
+    font-size: 4vw;
+}
+.service-image{
+    width: 40%;
+    height: 100%
+}
+.service-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+}
+.service-description{
+    padding: 1.5vw 1vw;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.service-description h3{
+    line-height: 1.7vw;
+    color: #ff3300;
+}
+.service-description p{
+    padding-top: 1.6vw;
+    line-height: 1.6vw;
+    color: rgb(88, 84, 84);
+}
+
+/*.............delivery partners..............*/
+
+.delivery-partners-container{
+    width: 100vw;
+    text-align: center;
+}
+.delivery-partners{
+    padding: 5vw 10vw;
+    display: flex;
+    margin-top: 4.5vw;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2vw;
+    background-color: bisque;
+}
+.delivery-partner-images{
+    border-radius: 10px;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+.delivery-partners img{
+    padding: 2vw 2vw;
+    width: 25vw;
+    height: 15vw;
+    box-shadow: 1px 1px 20px rgb(195, 194, 194);
+    border-radius: 10px;
+    background-color: #fff;
+
+}
+.delivery-partners-container h1{
+    font-size: 4vw;
+}
+
+
+/*..............delivered items.................*/
+
+
+.delivered-items-container{
+    text-align: center;
+}
+.delivered-items-container h1{
+    margin-top: 5vw;
+    font-size: 4vw;
+}
+.items-container{
+    padding: 4vw 10vw;
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(20%, 2fr));
+    gap: 1vw;
+}
+.delivered-items{
+    width: 100%;
+    height: 18vw;
+    border: 2px solid gray;
+    text-align: center;
+    border-radius: 10px;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+.delivered-items img{
+    width: 100%;
+    height: 14vw;
+    padding: 1vw 1vw;
+    border-radius: 10px;
+}
+
+/*................door-pick-up.................*/
+
+.door-pick-up{
+    width: 100vw;
+    height: 37.5vh;
+    padding: 3vw 20vw;
+    text-align: center;
+    font-size: 1.5vw;
+    background-image: url(./Asserts/door-pick-up-banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+}
+.layer{
+    width: 100%;
+    height: 100%;
+    padding: 3vw 20vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+.number{
+    margin-top: 3vw;
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+    align-items: center;
+}
+.number a{
+    text-decoration: none;
+    background-color: #ff3300;
+    padding: 0.8vw 1.5vw;
+    font-size: 1.3vw;
+    color: #f9f9f9;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+}
+.number a:hover{
+    background-color: #009900;
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97);
+}
+
+
+/*....................destinations container........................*/
+
+.destinations-container{
+    width: 100vw;
+    text-align: center;
+}
+.destinations-container-inner{
+    width: 100%;
+    padding: 5vw 10vw;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    grid-template-columns: repeat(auto-fit, minmax(15%, 5fr));
+    
+}
+.destinations-container h1{
+    font-size: 4vw;
+    margin-top: 5vw;
+}
+.destinations-container-inner .destination{
+    width: 100%;
+    height: 10vw;
+    border: 2px solid rgb(198, 198, 198);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    animation: appear linear;
+    box-shadow: 1px 1px 10px rgb(227, 224, 224);
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+.destinations-container-inner .destination img{
+    width: 80%;
+    padding: 1vw 1vw;
+    height: 70%;
+}
+.destinations-container-inner .destination h3{
+    text-transform: uppercase;
+}
+
+/*.................choose-us...................*/
+
+.choose-us{
+    width: 100vw;
+    text-align: center;
+    padding: 0vw 15vw;
+}
+.choose-us h1{
+    font-size: 4vw;
+}
+.choose-us h3{
+    padding: 2vw 0vw;
+    line-height: 2vw;
+}
+
+/*.............contact-form................*/
+
+.contact-container{
+    margin-top: 3vw;
+    background: linear-gradient(#ffdad5, #fff7f9);
+    width: 100vw;
+    height: 35vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.contact-left{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 50vw;
+    height: 100%;
+    justify-content: center;
+    gap: 1.2vw;
+}
+.contact-right{
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-right img{
+    width: 30vw;
+    margin-right: 10vw;
+    height: 30vw;
+}
+.contact-left button{
+    margin-left: 17vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    border: none;
+    padding: 0.8vw 3.5vw;
+    border-radius: 50px;
+    color: #fff;
+    background: linear-gradient(270deg, #ff994f,#fa6d86);
+    cursor: pointer;
+}
+.contact-input:focus{
+    border: 1px solid #ff994f;
+}
+.contact-input::placeholder{
+    color: #a9a9a9;
+}
+.contact-left-title h2{
+    font-weight: 600;
+    margin-left: 17vw;
+    color: #a363aa; 
+    font-size: 40px;
+}
+.contact-left-title hr{
+    border: none;
+    width: 120px;
+    height: 5px;
+    margin-left: 17vw;
+    background: #a363aa;
+    border-radius: 10px;
+    border-bottom: 50px;
+}
+.contact-input{
+    margin-left: 17vw;
+    width: 25vw;
+    height: 3vw;
+    border: none;
+    outline: none;
+    padding: 25px;
+    color: #666;
+    font-weight: 600;
+    border-radius: 50px;
+}
+.contact-left textarea{
+    height: 6vw;
+    padding-top: 15px;
+    border-radius: 15px;
+}
+
+/*......................footer....................*/
+
+.footer{
+    width: 100vw;
+    text-align: center;
+    padding: 2vw 10vw;
+}
+/* .......................mobile responsive..................... */
+
+@media only screen and (max-width: 767px) {
+    /*...............navbar...............*/
+
+    .container{
+        width: 100vw;
+    }
+
+    .nav{
+        display: none;
+    }
+    .logo img{
+        width: 20vw;
+    }
+    .logo p{
+        font-size: 5vw;
+        text-indent: 2vw;
+        letter-spacing: 0.5vw;
+        font-weight: 600;
+    }
+    .logo span{
+        color: #ff3300;
+    }
+
+
+    /*..................Hero..................*/
+
+    .hero{
+        width: 100vw;
+        height: 90vw;
+    }
+    .overlay .right{
+        display: none;
+    }
+    .overlay .left{
+        padding: 20vw 15vw;
+        width: 100vw;
+        height: 90%;
+    }
+
+    .left h1{
+        font-size: 20px;
+        line-height: 25px;
+    }
+    .left p{
+        font-size: 10px;
+        line-height: 15px;
+    }
+    .left h3{
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .numbers a{
+        width: 30vw;
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+    /*..................services................*/
+
+    .services-heading h1{
+        font-size: 6vw;
+        padding: 4vw 3vw;
+    }
+    .services-container{
+        position: relative;
+        padding: 2vw 2vw;
+        top: 1vw;
+        width: 100%;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        gap: 4vw;
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+    .services-container .service{
+        display: flex;
+        gap: 2vw;
+        width: 100%;
+        height: 50vw;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+    .service-image{
+        width: 50vw;
+    }
+    .service-description{
+        padding: 1vw 1vw;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .service-description h3{
+        line-height: 5vw;
+        font-size: 4.5vw;
+        color: #ff3300;
+    }
+    .service-description p{
+        padding-top: 2vw;
+        font-size: 3.5vw;
+        line-height: 4.2vw;
+        color: rgb(136, 131, 131);
+    }
+    /* .services-heading h1{
+        animation: shake 1s cubic-bezier(.36,.07,.19,.97) infinite;
+    } */
+
+    .delivery-partners-container{
+        margin-top: 4vw;
+    }
+    .delivery-partners-container h1{
+        font-size: 6vw;
+        padding: 4vw 3vw;
+    }
+
+
+    /*....................items-we-deliver....................*/
+
+    .delivered-items-container h1{
+        font-size: 7vw;
+        padding: 4vw 0vw;
+    }    
+    .items-container{
+        width: 100vw;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(50%, 4fr));
+        gap: 3vw;
+    }
+    .delivered-items{
+        width: 100%;
+        height: 50vw;
+        border: 2px solid gray;
+        text-align: center;
+        border-radius: 10px;
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+    }
+    .delivered-items img{
+        width: 100%;
+        height: 38vw;
+        padding: 3vw 3vw;
+        border-radius: 10px;
+    }
+    .delivered-items h2{
+        font-size: 5vw;
+    }
+
+    /*................door-pick-up................*/
+
+    .door-pick-up{
+        width: 100vw;
+        height: 50vw;
+    }
+    .layer{
+        width: 100%;
+        height: 100%;
+        padding: 8vw 8vw;
+    }
+    .layer h1{
+        font-size: 20px;
+    }
+    .number{
+        margin-top: 6vw;
+    }
+    .number a{
+        font-size: 15px;
+        padding: 3vw 5vw;
+    }
+
+    /*...........destinations.............*/
+
+
+    .destinations-container-inner{
+        width: 100%;
+        padding: 5vw 5vw;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        gap: 2vw;
+        grid-template-columns: repeat(auto-fit, minmax(33%, 10fr));
+        
+    }
+    .destinations-container h1{
+        font-size: 6vw;
+        padding: 4vw 0vw;
+        margin-top: 5vw;
+    }
+    .destinations-container-inner .destination{
+        width: 100%;
+        height: 30vw;
+        box-shadow: 1px 1px 10px rgb(227, 224, 224);
+    }
+    .destinations-container-inner .destination img{
+        width: 100%;
+        padding: 0.5vw 1vw;
+        height: 70%;
+    }
+    
+    /*.............why-choose-us.................*/
+
+    .choose-us{
+        width: 100vw;
+        text-align: center;
+        padding: 5vw 2vw;
+    }
+    .choose-us h1{
+        font-size: 7vw;
+    }
+    .choose-us h3{
+        padding: 2vw 0vw;
+        line-height: 5vw;
+    }
+
+    /*..............contact..............*/
+
+    .contact-container{
+        width: 100vw;
+        height: 120vw;
+    }
+    .contact-left{
+        width: 100%;
+        height: 100vw;
+        display: flex;
+        gap: 3vw;
+        align-items: center;
+        justify-content: center;
+    }
+    .contact-right{
+        display: none;
+    }
+    .contact-input{
+        width: 80%;
+        margin-right: 16vw;
+    }
+    .contact-left-title h2{
+        font-size: 10vw;
+        margin-right: 18vw;
+    }
+    .contact-left-title hr{
+        display: none;
+    }
+    .contact-left-title h2{
+        padding-bottom: 6vw;
+    }
+    .contact-left textarea{
+        height: 20vw;
+    }
+    .contact-left button{
+        margin-right: 18vw;
+        position: relative;
+        top: 4vw;
+        padding: 2vw 10vw;
+    }
+
+    /*...........footer...........*/
+
+    .footer{
+        width: 100vw;
+        padding: 10vw 10vw;
+    }
+
+    /*..............whatsapp mbl...............*/
+
+    .whatsappmbl{
+        display: block;
+    }
+    .whatsappmbl a{
+        position: fixed;
+        background-image: url(./Asserts/whatsapp.png);
+        background-size: cover;
+        width: 15vw;
+        height: 15vw;
+        bottom: 1vw;
+        z-index: 10;
+        right: 4vw;
+        bottom: 4vw;
+    }
+}
